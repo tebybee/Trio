@@ -8,7 +8,6 @@ int main()
   cout<<"Enter Red, Green, and Blue values: ";
   cin>>red>>green>>blue;
   //...END OF "DO NOT CHANGE" AREA
-  cout<<red<<green<<blue<< "\n";
   organize(red,green, blue);
 
 
@@ -24,35 +23,35 @@ void organize(int &red, int &green, int &blue)
 {
     if((red > green) && (red > blue))
     {
-        int temp = blue;
-        blue = red;
-        red = temp;
-        if(red > green)
+        if(blue > green)
         {  
             int temp = green;
-            green = red;
-            red = temp;
+            green = blue;
+            blue = temp;
         }
     }
-    else if ((green > red) && (green > blue))
+    else if ((green > blue) && (green > red))
     {   
-        int temp = blue;
-        blue = green; 
+        int temp = red;
+        red = green; 
         green = temp;
-        if(red > green)
+        if(blue > green)
         {   
            int temp = green;
-           green = red;
-           red = temp;
+           green = blue;
+           blue = temp;
         }
     }
     else if ((blue > red) && (blue > green))
     {
-        if(red > green) 
+        int temp = red;
+        red = blue;
+        blue = temp;
+        if(blue > green) 
         {  
             int temp = green;
-            green = red;
-            red = temp;
+            green = blue;
+            blue = temp;
         }
     }
     
